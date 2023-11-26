@@ -81,14 +81,14 @@
 
   
   <url>
-    <loc>http://yoursite-url/tags/Curriculum/</loc>
+    <loc>http://yoursite-url/tags/geekers-time/</loc>
     <lastmod>2023-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/geekers-time/</loc>
+    <loc>http://yoursite-url/tags/Curriculum/</loc>
     <lastmod>2023-11-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

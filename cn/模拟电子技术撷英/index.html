@@ -242,8 +242,6 @@
 
           
           
-          
-          
           <li>
             <a href="/about/">
               
@@ -256,9 +254,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              分类
+              归档
               
               
             </a>
@@ -266,10 +264,12 @@
           
           
           
+          
+          
           <li>
-            <a href="/archive/">
+            <a href="/categories/">
               
-              归档
+              分类
               
               
             </a>
@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">2</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">408</span> In Total
+              Words <span class="post-count">565</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -473,15 +473,32 @@
 <h3 id="Part-负反馈">Part 负反馈</h3>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">负反馈的前置知识：常见的极性判断（判断反馈类型）-&gt;框图分析法-&gt;求解具体电路的参数（M、F）</span><br><span class="line">-&gt;负反馈对电路性能的影响(主要有四类)</span><br></pre></td></tr></table></figure>
 <ul>
+<li><img src="../../archive/images/112602.png" alt="极性"></li>
 <li>负反馈对电路性能的影响部分我的了解还不够，之后需要继续学习。</li>
 </ul>
 <h3 id="Part-功率放大器">Part 功率放大器</h3>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">甲乙类，甲类、乙类的分类标准。各自的基础电路和改进电路。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>主体：OCL<br>
+<img src="../../archive/images/032611.png" alt="Alt text"><br>
+在静态时，由于两个晶体管都无法导通，所以都处于截止状态，因此$I_{CE} \approx 0$，不消耗功率。且就算导通，同时只会有一个晶体管导通。常用的计算如下：<br>
+$$<br>
+P_{R_{L}}=\frac{1}{\pi} \int i_L \cdot U_o d\omega t = \frac{U_{om}^2}{2 R_L} ,其中 U_{om}是有效值<br>
+$$<br>
+$$<br>
+P_{pw}=\frac{1}{\pi} \int V_{cc} \cdot i_{L} d \omega t = \frac{2V_{cc} U_{om}}{\pi R_L }<br>
+$$<br>
+一般把管子的功率定义为$P_{T}=P_{pw}-P_{L}$，所以<br>
+$$<br>
+P_{T_max}=\frac{V_{cc ^2}}{\pi^2 R_L}<br>
+$$</li>
+</ul>
 <h2 id="Questions-for-Teachers（on-Exam）">Questions for Teachers（on Exam）</h2>
 <ul>
 <li>LC RC自激振荡电路的考试程度：LC是不是要到书本上的振荡条件的细节，还是只需要掌握能否起振的判断方法？</li>
 <li>8.3.4</li>
-<li>这个电路从$Q_{2}$输出的反馈极性怎么判断？ <img src="../../archive/images/112601.png" alt="Alt text"></li>
+<li>功率放大部分是不是主要是OCT（8.2）部分？</li>
+<li>这个电路从$Q_{2}$输出的反馈极性怎么判断？ 786<img src="../../archive/images/112601.png" alt="Alt text"></li>
 </ul>
 <hr>
 <p><strong>补充资料</strong><br>
