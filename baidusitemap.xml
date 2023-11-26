@@ -16,8 +16,4 @@
     <loc>http://yoursite-url/cn/First-Blog/</loc>
     <lastmod>2023-11-24</lastmod>
   </url>
-  <url>
-    <loc>http://yoursite-url/undefined/First-Blog/</loc>
-    <lastmod>2023-11-24</lastmod>
-  </url>
 </urlset> 
