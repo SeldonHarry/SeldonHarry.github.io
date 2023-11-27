@@ -245,6 +245,17 @@
           
           
           <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               关于
@@ -259,17 +270,6 @@
             <a href="/archive/">
               
               归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              分类
               
               
             </a>
@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">1</span> Minutes
+              Estimated Reading Time <span class="post-count">3</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">260</span> In Total
+              Words <span class="post-count">1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -464,19 +464,44 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="Prelude">Prelude</h2>
-<h2 id="缘起">缘起</h2>
-<p>今天本来应该是进行量子计算小组论文报告的一天,但是由于本周的各项大作业比较集中，所以并没有很好的为论文和量子计算相关的知识做学习。中午的组会倒是颇有收获，对于感兴趣的一些问题也记录在了飞书文档中，之后可以找一些高引用的论文读一读，在看看有没有相关电路的实现。</p>
-<p>在回来的路程中，我觉得既然在读论文，做研究，同时也产生了一些关于研究和课程中问题的疑问，</p>
+        <h2 id="缘起">缘起</h2>
+<p>今天本来应该是进行量子计算小组论文报告的一天,但是由于本周的各项大作业比较集中，所以并没有很好的为论文和量子计算相关的知识做学习。中午的组会和大家一起讨论了一下本周读的论文，主要涉及格密码的求解方法…（不得不说密码学比炼丹深到哪里去了）。之后或许就QAS或Lattice问题作为我在这个项目中的负责方向。</p>
+<p>在回来的路程中，我觉得既然在读论文，做研究，同时也产生了一些关于研究和课程中问题的疑问，把问题抛出来，让大家都能看到，形成一个讨论的氛围，对于这个研究内容的走向，和自己对问题、理论的理解都是大有脾益的。所以，借助之前了解到的搭建网站方法和我的香橙派服务器，就可以基于校内网搭建一个个人blog了。当然，为了方便更多人的浏览，在github上也会同步一部分blog中的内容。</p>
+<h2 id="How-to">How to</h2>
+<h3 id="I-选择模板">I.选择模板</h3>
+<p>我选的模板是偶然在https://tsukihimecn.github.io/ 中看到的。它对于基本的文字、图片有精美的排版和动画，因此我最初选择用它来搭建网站。可是深入的尝试表明这个网站接口支持并不丰富，且已经不再维护，遂放弃，之后或许会在合适的时间移植到NexT模板上。</p>
+<p>模板搭建方案在<a target="_blank" rel="noopener" href="https://v-vincen.life/cn/Hexo-Theme-LiveMyLife/">这个</a>网站上有详细的介绍，但是我使用的是Linux的Ubuntu发行版，所以搭建方法与之有些不一样。</p>
+<h3 id="II-环境">II.环境</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo install nodejs npm git</span><br><span class="line">sudo npm install n -g</span><br><span class="line">sudo n stable</span><br><span class="line">sudo npm install npm -g</span><br></pre></td></tr></table></figure>
+<p>apt管理的npm包版本较老，所以我直接用npm更新npm。执行完上面的命令且不报错后，就可以安装hexo了。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<p>注意init命令调用参数名就是当前文件夹下建立博客的名字。文件夹下会创建一些初始的目录文件。</p>
+<h3 id="III-克隆模板">III.克隆模板</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">rm -rf scaffolds source themes _config.landscape.yml _config.yml package.json yarn.lock</span><br><span class="line">git clone https://github.com/V-Vincen/hexo-theme-livemylife.git</span><br><span class="line">mv hexo-theme-livemylife/* ./</span><br><span class="line">rm -rf hexo-theme-livemylife</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>之后按照之前所说的网页上的教程调整功能接口就好。</p>
+<h3 id="IV-编译和部署">IV.编译和部署</h3>
+<p>请勿直接拷贝下面的命令。</p>
+<p>在blog文件夹下执行这些命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g #生成文件</span><br><span class="line">hexo server #也可以加-i 参数，如-i 4001 此时不用默认的4000端口调试</span><br></pre></td></tr></table></figure>
+<p>在浏览器中打开本地端口: <a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a> 就可以看到你的网页了。</p>
+<p>按照教程配置好git部署参数后，执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>就可以部署到github上了。注意，如果之后要重新部署，记得先清除掉先前的编译好的内容，执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>就可以重新部署好了。github页面加载比起你的上传会有几分钟的延时，是正常现象。</p>
+<p>如果你有服务器，则可以使用以下命令不占用终端的执行网页部署</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup hexo server &gt;out.file 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
 <h2 id="后记">后记</h2>
 <ul>
+<li>为了简单起见，不要用gittalk等聊天框服务。</li>
 <li>由于这个网站模板自身的一些缺陷，有一些学术上的内容我并不会在这里更新，而是会放在其他网站上面更新。</li>
 <li>所有的文件引用都应该放在archive之下。</li>
 <li>注意，这个模板的markdown文件引用只能放在archive下才能成功！</li>
 </ul>
-<blockquote>
-<p>nohup hexo server &gt;out.file 2&gt;&amp;1 &amp;</p>
-</blockquote>
+<h2 id="Todo">Todo</h2>
+<ul>
+<li>对于Windows用户而言，配置或许比linux下稍微复杂一些，但是基本上除了环境意外，其他的搭建过程都差不多。如果确实找不到搭建方法，请email我，我会再测试使用shell、msys2或者wsl等工具在Windows环境下再测试一次。（本人除了Surface上用windows，其他时候都用Linux生态了）</li>
+</ul>
 
 
         <hr>
@@ -576,7 +601,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Prelude"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Prelude</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BC%98%E8%B5%B7"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">缘起</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BC%98%E8%B5%B7"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">缘起</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#How-to"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">How to</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#I-%E9%80%89%E6%8B%A9%E6%A8%A1%E6%9D%BF"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">I.选择模板</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#II-%E7%8E%AF%E5%A2%83"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">II.环境</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#III-%E5%85%8B%E9%9A%86%E6%A8%A1%E6%9D%BF"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">III.克隆模板</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IV-%E7%BC%96%E8%AF%91%E5%92%8C%E9%83%A8%E7%BD%B2"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">IV.编译和部署</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">后记</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Todo"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Todo</span></a></li></ol>
         
         </div>
       </aside>
