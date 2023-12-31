@@ -350,19 +350,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/LL.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/IMG_0020.jpg');
+      --intro-header-background-image-url-post: url('7-20103000033N35.jpg');
+      --intro-header-background-image-url-page: url('/7-20103000033N35.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/LL.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/IMG_0020.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('7-20103000033N35.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/7-20103000033N35.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url(''); */
+        /* background-image: url('7-20103000033N35.jpg'); */
       
     }
 
@@ -398,11 +398,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">5</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">567</span> In Total
+              Words <span class="post-count">1.5k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -464,35 +464,91 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><h3 id="Part-波发生器"><a href="#Part-波发生器" class="headerlink" title="Part 波发生器"></a>Part 波发生器</h3><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方波发生器-&gt;(把方波的充电改成恒流充电)方波三角波发生器-&gt;(改变三角波的上下行占空比，并添加改频电阻)锯齿波发生器</span><br><span class="line">核心部件是使用了正反馈接法的电压比较器，是工作在非线性区的运放。</span><br></pre></td></tr></table></figure>
+        <h2 id="大纲">大纲</h2>
+<p>这是我在复习模电时的笔记。为了方便后人学习和使用，遂下功夫做成了网页，参照《新概念模电》和本校教材的辅导书的定义方法和处理思路展开。</p>
+<p>这篇提纲摘要的文章适合初学者大致了解<strong>交大</strong>的模电的主要内容与侧重点，以方便有选择的听课和复习。复习ppt在<a href="../../repo/analog/review2023%20.pdf">这里</a>。</p>
+<p>这篇文章并不追求基础知识的面面俱到，而是期望能够以畅通的逻辑链条把最简单最重要的模电知识、思想和电路模型讲清楚，而对于平时上课听了老师讲课的同学来说，做好这些也就自然可以考出接近满分了（毕竟有附加题）。</p>
+<h3 id="第二章：基本放大电路">第二章：基本放大电路</h3>
+<p><strong>目标</strong>：将会是之后实现各种特定功能电路的基础，应当深入认识其能够放大信号的原理之后，将其运算特征“黑盒”化。</p>
+<p>三极管出厂时会标注其特征参数，比如$\beta$、$r_{b`b}$等。利用这些静态参数再加上静态流过基极的电流量就可以算出常用的动态放大倍数$\dot A_{u}$，这里记成复数形式，因为在后面会学到当输入信号频率较高时，结电容会使得输出信号有幅值和相位的变化。没错，前面的章节都是在研究“中频”放大，所以耦合电路的电容和结电容在交流电路中分别作为短路和开路处理。</p>
+<p>下面列出BJT管三种解法的电路图、直流电路图、交流电路图和各自的运算参数。</p>
+<p>对于电压稳定电路（不再解释为什么能够稳定电压），可以采用近似与严格两种计算方法。</p>
+<p>分析单极型晶体管时，要注意$U_{gs}$到底是不是0。</p>
+<p>失真分析。</p>
+<h3 id="第三章：集成运放">第三章：集成运放</h3>
+<p><strong>目标</strong>：在学习完晶体管的输入输出特性之后，我们对将晶体管级联起来，分别利用不同解法的优势，来打造出运算放大器。理想的运算放大器应当是输入电阻无穷大，放大倍数无穷大，输出电阻为0的元件。本章会从各类基本电路出发，研究如何用晶体管组成运放的几个基础模块。</p>
+<p>共模和差模信号的定义</p>
+<p>长尾微分放大电路（两种接法的，以及加深内容）</p>
+<p>电流源</p>
+<p>多级放大电路</p>
+<h3 id="Part-波发生器">Part 波发生器</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方波发生器-&gt;(把方波的充电改成恒流充电)方波三角波发生器-&gt;(改变三角波的上下行占空比，并添加改频电阻)锯齿波发生器</span><br><span class="line">核心部件是使用了正反馈接法的电压比较器，是工作在非线性区的运放。</span><br></pre></td></tr></table></figure>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">LC</span> RC型的振荡系统</span><br><span class="line">RC适合工作在频率较低的电路，LC可以提供高频的振荡。</span><br><span class="line">整体判断的方法是：<span class="number">1</span>.找到环路 <span class="number">2</span>.环路兜圈判断极性（难点）</span><br></pre></td></tr></table></figure>
 <figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">压控振荡电路：基本组成是一个积分器再加上一个滞回比较器。</span><br><span class="line">滞回比较器有三种接法</span><br></pre></td></tr></table></figure>
 <p>压控振荡电路的思想是使用比较器来控制给电容充电的开关。</p>
-<h3 id="Part-负反馈"><a href="#Part-负反馈" class="headerlink" title="Part 负反馈"></a>Part 负反馈</h3><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">负反馈的前置知识：常见的极性判断（判断反馈类型）-&gt;框图分析法-&gt;求解具体电路的参数（M、F）</span><br><span class="line">-&gt;负反馈对电路性能的影响(主要有四类)</span><br></pre></td></tr></table></figure>
+<h3 id="Part-负反馈">Part 负反馈</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">负反馈的前置知识：常见的极性判断（判断反馈类型）-&gt;框图分析法-&gt;求解具体电路的参数（M、F）</span><br><span class="line">-&gt;负反馈对电路性能的影响(主要有四类)</span><br></pre></td></tr></table></figure>
 <ul>
+<li>负反馈主框图</li>
+<li>四种负反馈框图、深度负反馈下的变化和运算放大器的具象化</li>
+<li>一个困难电路的分析</li>
 <li><img src="../../archive/images/112602.png" alt="极性"></li>
-<li>负反馈对电路性能的影响部分我的了解还不够，之后需要继续学习。</li>
-</ul>
-<h3 id="Part-功率放大器"><a href="#Part-功率放大器" class="headerlink" title="Part 功率放大器"></a>Part 功率放大器</h3><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">甲乙类，甲类、乙类的分类标准。各自的基础电路和改进电路。</span><br></pre></td></tr></table></figure>
+<li>引入什么类型的负反馈：
 <ul>
-<li>主体：OCL<br><img src="../../archive/images/032611.png" alt="Alt text"><br>在静态时，由于两个晶体管都无法导通，所以都处于截止状态，因此$I_{CE} \approx 0$，不消耗功率。且就算导通，同时只会有一个晶体管导通。常用的计算如下：<script type="math/tex; mode=display">
-P_{R_{L}}=\frac{1}{\pi} \int i_L \cdot U_o d\omega t = \frac{U_{om}^2}{2 R_L} ,其中 U_{om}是有效值</script><script type="math/tex; mode=display">
-P_{pw}=\frac{1}{\pi} \int V_{cc} \cdot i_{L} d \omega t = \frac{2V_{cc} U_{om}}{\pi R_L }</script>一般把管子的功率定义为$P<em>{T}=P</em>{pw}-P_{L}$，所以<script type="math/tex; mode=display">
-P_{T_max}=\frac{V_{cc ^2}}{\pi^2 R_L}</script></li>
+<li>直流负反馈：稳定静态工作点、抑制温漂。</li>
+<li>交流负反馈：稳定放大倍数、改变输入和输出电阻、展宽频带</li>
+<li>电压负反馈：稳定放大电路的输出电压，减小输出电阻（成为理想的恒压源）</li>
+<li>电流负反馈：稳定放大电路的输出电流，增大输出电阻（成为理想的恒流源）</li>
+<li>串联负反馈：增大放大电路的输入电阻</li>
+<li>并联负反馈：减小放大电路的输入电阻</li>
+<li><font color=red>以上结论只需要反馈框图就可以得出（四幅）</font></li>
 </ul>
-<h2 id="Questions-for-Teachers（on-Exam）"><a href="#Questions-for-Teachers（on-Exam）" class="headerlink" title="Questions for Teachers（on Exam）"></a>Questions for Teachers（on Exam）</h2><ul>
+</li>
+<li>什么是稳定？被稳定的输出量是怎么样被稳定的呢？</li>
+<li>负反馈的幅频、相频特性：由$\dot A \dot F$决定</li>
+</ul>
+<h3 id="波形发生和信号处理电路">波形发生和信号处理电路</h3>
+<ul>
+<li>大部分比较器是工作在非线性区的，大部分振荡元件是工作在闭环负反馈状态下的。</li>
+</ul>
+<h3 id="Part-功率放大器">Part 功率放大器</h3>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">甲乙类，甲类、乙类的分类标准。各自的基础电路和改进电路。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>主体：OCL<br>
+<img src="../../archive/images/032611.png" alt="Alt text"><br>
+在静态时，由于两个晶体管都无法导通，所以都处于截止状态，因此$I_{CE} \approx 0$，不消耗功率。且就算导通，同时只会有一个晶体管导通。常用的计算如下：<br>
+$$<br>
+P_{R_{L}}=\frac{1}{\pi} \int i_L \cdot U_o d\omega t = \frac{U_{om}^2}{2 R_L} ,其中 U_{om}是有效值<br>
+$$<br>
+$$<br>
+P_{pw}=\frac{1}{\pi} \int V_{cc} \cdot i_{L} d \omega t = \frac{2V_{cc} U_{om}}{\pi R_L }<br>
+$$<br>
+一般把管子的功率定义为$P_{T}=P_{pw}-P_{L}$，所以<br>
+$$<br>
+P_{T_max}=\frac{V_{cc ^2}}{\pi^2 R_L}<br>
+$$</li>
+</ul>
+<h2 id="Questions-for-Teachers（on-Exam）">Questions for Teachers（on Exam）</h2>
+<ul>
 <li>LC RC自激振荡电路的考试程度：LC是不是要到书本上的振荡条件的细节，还是只需要掌握能否起振的判断方法？</li>
 <li>8.3.4</li>
 <li>功率放大部分是不是主要是OCT（8.2）部分？</li>
 <li>这个电路从$Q_{2}$输出的反馈极性怎么判断？ 786<img src="../../archive/images/112601.png" alt="Alt text"></li>
+<li>Chapt3 会考差模输入和共模输入电阻相关问题吗？</li>
+<li>复合管电路要考？</li>
 </ul>
 <hr>
-<p><strong>补充资料</strong><br><a href="../../archive/repo/新概念模拟电路.pdf">DownLoads Extra E-book Here</a><br><a href="../../archive//repo/review.pdf">Official Review ppt</a></p>
+<p><strong>补充资料</strong><br>
+<a href="../../archive/repo/%E6%96%B0%E6%A6%82%E5%BF%B5%E6%A8%A1%E6%8B%9F%E7%94%B5%E8%B7%AF.pdf">DownLoads Extra E-book Here</a></p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/读钱学森传/" data-toggle="tooltip" data-placement="top" title="读钱学森传">&larr; Previous Post</a>
+          </li>
           
           
           <li class="next">
@@ -583,7 +639,7 @@ P_{T_max}=\frac{V_{cc ^2}}{\pi^2 R_L}</script></li>
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%A7%E7%BA%B2"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">大纲</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Part-%E6%B3%A2%E5%8F%91%E7%94%9F%E5%99%A8"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Part 波发生器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Part-%E8%B4%9F%E5%8F%8D%E9%A6%88"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Part 负反馈</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Part-%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Part 功率放大器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Questions-for-Teachers%EF%BC%88on-Exam%EF%BC%89"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Questions for Teachers（on Exam）</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%A7%E7%BA%B2"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">大纲</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">第二章：基本放大电路</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%9A%E9%9B%86%E6%88%90%E8%BF%90%E6%94%BE"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">第三章：集成运放</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Part-%E6%B3%A2%E5%8F%91%E7%94%9F%E5%99%A8"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">Part 波发生器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Part-%E8%B4%9F%E5%8F%8D%E9%A6%88"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">Part 负反馈</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A2%E5%BD%A2%E5%8F%91%E7%94%9F%E5%92%8C%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E7%94%B5%E8%B7%AF"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">波形发生和信号处理电路</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Part-%E5%8A%9F%E7%8E%87%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">Part 功率放大器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Questions-for-Teachers%EF%BC%88on-Exam%EF%BC%89"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Questions for Teachers（on Exam）</span></a></li></ol>
         
         </div>
       </aside>
