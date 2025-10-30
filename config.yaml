@@ -58,7 +58,7 @@ params:
 
     sidebar:
         emoji: ☭
-        subtitle: While one does not seek the office, one has pledged oneself to the service of one's country.(LMAO)
+        subtitle: While one does not seek the office, one has pledged oneself to the service of one's country.
         avatar:
             enabled: true
             local: true
