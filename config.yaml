@@ -221,7 +221,7 @@ menu:
           name: Gmail
           url: mailto:seldonzho@gmail.com
           params:
-              icon: mail
+              icon: mail1
 
 related:
     includeNewer: true
