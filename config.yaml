@@ -211,6 +211,12 @@ menu:
           params:
               icon: brand-github
 
+        - identifier: scholar
+          name: Scholar
+          url: https://scholar.google.com/citations?hl=en&user=jwVmD-IAAAAJ
+          params:
+              icon: scholar        
+
         - identifier: Mail
           name: Gmail
           url: mailto:seldonzho@gmail.com
